@@ -6,25 +6,32 @@ import strings from 'resources/Strings';
 
 const styles = StyleSheet.create({
   button: {
-    height:50,
+    height: 50,
     backgroundColor: Colors.black,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   text: {
     color: Colors.white,
-    fontSize: 18,
+    fontSize: 18
   }
 });
+export interface NextScreenButtonProps {
+  numberOfStars: number;
+}
 
-const NextScreenButton = () => {
-  return (
-    <TouchableHighlight onPress={() => navigateToSelectedItemsScreen()}>
-      <View style={styles.button}>
-        <Text style={styles.text}>{strings.summary}</Text>
-      </View>
-    </TouchableHighlight>
-  );
+const NextScreenButton = (props: NextScreenButtonProps) => {
+  if (props.numberOfStars !== 0) {
+    return (
+      <TouchableHighlight onPress={() => navigateToSelectedItemsScreen()}>
+        <View style={styles.button}>
+          <Text style={styles.text}>{strings.summary}</Text>
+        </View>
+      </TouchableHighlight>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default NextScreenButton;

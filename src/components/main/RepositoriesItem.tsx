@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   checkBox: {
-    margin: 5
+    padding: 5
   },
   avatar: {
     height: 50,

@@ -4,16 +4,16 @@ import Colors from 'resources/Colors';
 import Images from 'resources/Images';
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:Colors.transparentBlack,
-    flexDirection:'row',
+  container: {
+    backgroundColor: Colors.transparentBlack,
+    flexDirection: 'row',
     alignItems: 'center',
-    padding:5
+    padding: 5
   },
   text: {
-    fontSize:18,
+    fontSize: 18,
     color: Colors.black,
-    marginLeft:5
+    marginLeft: 5
   },
   star: {
     height: 30,
@@ -26,12 +26,16 @@ export interface StarsCounterProps {
 }
 
 const StarsCounter = (props: StarsCounterProps) => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.star} source={Images.starsIcon} />
-      <Text style={styles.text}>{props.numberOfStars}</Text>
-    </View>
-  );
+  if (props.numberOfStars !== 0) {
+    return (
+      <View style={styles.container}>
+        <Image style={styles.star} source={Images.starsIcon} />
+        <Text style={styles.text}>{props.numberOfStars}</Text>
+      </View>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default StarsCounter;

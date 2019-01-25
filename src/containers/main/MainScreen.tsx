@@ -92,7 +92,8 @@ class MainScreen extends React.PureComponent<MainProps> {
           changeSelectedRepositories={this.props.changeSelectedRepositories}
         />
         <StarsCounter numberOfStars={this.props.numberOfStars} />
-        <NextScreenButton />
+        <NextScreenButton           numberOfStars={this.props.numberOfStars}
+        />
       </View>
     );
   }
