@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "test/*": ["_tests_/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

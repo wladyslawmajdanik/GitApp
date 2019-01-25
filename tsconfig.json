@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "lib": ["es7", "dom"],
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./lib",
+    "strict": false,
+    "rootDirs": ["src/", "lib/", "resources/"],
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "types": ["jest", "lodash", "react-native", "react-navigation", "enzyme"],
+    "pretty": true
+  },
+  "include": ["./src/"],
+  "exclude": [ "config", "node_modules", "lib", "e2e"]
+}
