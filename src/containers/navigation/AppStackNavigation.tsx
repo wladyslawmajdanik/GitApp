@@ -11,7 +11,7 @@ import strings from 'resources/Strings';
 const styles = StyleSheet.create({
   searchBox: {
     flex: 1,
-    padding: 10,
+    paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 const _defaultConfig = {
   headerStyle: {
     backgroundColor: Colors.black,
-    height: 55
+    height: 80
   },
   headerTintColor: Colors.white
 };
@@ -44,7 +44,10 @@ export const mainNavigationOptions = (
         tintColor={Colors.white}
         baseColor={Colors.white}
         containerStyle={styles.textField}
+        lineWidth={0}
         activeLineWidth={0}
+        disabledLineWidth={0}
+        animationDuration={0}
         autoCapitalize="none"
         label={strings.search}
         onChangeText={text => {

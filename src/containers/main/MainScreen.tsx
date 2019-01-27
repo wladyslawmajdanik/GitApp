@@ -8,10 +8,10 @@ import { connect } from 'react-redux';
 import { mainNavigationOptions } from 'containers/navigation/AppStackNavigation';
 import { NavigationScreenProp } from 'react-navigation';
 import {
-  changeSelectedRepositories,
-  getDataFormLocalStore,
-  getRepositories,
-  removeRepository
+  changeSelectedRepositoriesAction,
+  getDataFormLocalStoreAction,
+  getRepositoriesAction,
+  removeRepositoryAction
 } from 'saga/action';
 
 const styles = StyleSheet.create({
@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
 export const mapDispatchToProps = dispatch => {
   return {
     getRepositories: searchText => {
-      dispatch(getRepositories(searchText));
+      dispatch(getRepositoriesAction(searchText));
     },
     getDataFormLocalStore: () => {
-      dispatch(getDataFormLocalStore());
+      dispatch(getDataFormLocalStoreAction());
     },
     changeSelectedRepositories: (repository, isSelected) => {
-      dispatch(changeSelectedRepositories(repository, isSelected));
+      dispatch(changeSelectedRepositoriesAction(repository, isSelected));
     },
     removeRepository: repository => {
-      dispatch(removeRepository(repository));
+      dispatch(removeRepositoryAction(repository));
     }
   };
 };
@@ -92,8 +92,7 @@ class MainScreen extends React.PureComponent<MainProps> {
           changeSelectedRepositories={this.props.changeSelectedRepositories}
         />
         <StarsCounter numberOfStars={this.props.numberOfStars} />
-        <NextScreenButton           numberOfStars={this.props.numberOfStars}
-        />
+        <NextScreenButton numberOfStars={this.props.numberOfStars} />
       </View>
     );
   }
