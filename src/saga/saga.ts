@@ -53,12 +53,15 @@ export function* getRepositories(data) {
         const inputState = {
           network: InputNetworkState.NONE
         };
-        yield put({ type: REPOS_LOADED, data:{
+        yield put({
+          type: REPOS_LOADED,
+          data: {
             repositories: repositories,
             numberOfStars: 0,
             selectedRepositories: [],
             inputState
-          } });
+          }
+        });
       }
     } else {
       const inputState = {
@@ -109,9 +112,12 @@ export function* removeRepository(data) {
     item => item !== data.props.repository
   );
   let numberOfStars = yield call(countStars, filteredSelectedRepositories);
-  yield put({ type: REPOS_DELETED, data :{
+  yield put({
+    type: REPOS_DELETED,
+    data: {
       repositories: filteredRepositories,
       selectedRepositories: filteredSelectedRepositories,
       numberOfStars
-    }});
+    }
+  });
 }
